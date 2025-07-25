@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* .btn {
+    padding: 7px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.hover-border {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+ .hover-border::before,
+ .hover-border:after {
+    content: '';
+    position: absolute;
+    background: transparent;
+    z-index: 2;
+    width: 20%;
+    height: 45%;
+    transition: all 0.35s;
+    border-radius: 5px;
+    overflow: hidden;
+}
+ .hover-border::before {
+    top: 0;
+    left: 0;
+    border-left: 3px solid transparent;
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(to right, #DD058B, #85258E);
+    border-image-slice: 1;
+}
+ .hover-border::after {
+    bottom: 0;
+    right: 0;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #DD058B, #85258E);
+    border-image-slice: 1;
+}
+ .hover-border:hover::before,
+ .hover-border:hover::after {
+    width: 100%;
+    height: 100%;
+} */
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg); 
+  }
+}
+
+.logo-spin {
+  animation: logo-spin infinite 1s linear;
+}
+

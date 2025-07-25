@@ -12,7 +12,7 @@ export default function Main() {
     return (
         <>
             <Header />
-            <main className={`w-auto mx-auto md:mt-5 mt-0 ${isHome ? 'lg:mt-[100px] 2xl:mt-[185px] ' : 'lg:mt-[110px]'}`}>
+            <main className={`w-auto mx-auto  md:mt-5 mt-0 ${isHome ? 'lg:mt-[100px] 2xl:mt-[185px] ' : 'lg:mt-[110px]'}`}>
                 <Outlet />
             </main>
             <Register />

@@ -280,13 +280,16 @@ export default function PaperSub() {
                             </div>
                             <select name='Paper_Track' value={formData.Paper_Track} onChange={handleFileInputChange}
                                 required className="w-full border border-pink-300 focus:outline-none  rounded-xl px-3 py-3 text-gray-500">
-                                <option>Select Your Category</option>
-                                <option>Artificial Intelligence</option>
-                                <option>Smart Technologies</option>
-                                <option>IoT</option>
-                                <option>IoT</option>
-                                <option>IoT</option>
-                                <option>IoT</option>
+                                <option value="">Select Your Category</option>
+                                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                <option value="Smart Technologies">Smart Technologies</option>
+                                <option value="IoT">IoT</option>
+                                <option value="Robotics">Robotics</option>
+                                <option value="Big Data">Big Data</option>
+                                <option value="Cybersecurity & Blockchain">Cybersecurity & Blockchain</option>
+                                <option value="Cloud">Cloud</option>
+                                <option value="Human-Centered & Ethical AI">Human-Centered & Ethical AI</option>
+                                <option value="Real-World Applications">Real-World Applications</option>
                             </select>
                             <div className="relative w-full border-2 border-dashed border-pink-300 rounded-xl py-10 flex flex-col items-center justify-center text-center text-gray-500 overflow-hidden cursor-pointer">
                                 <input

@@ -3,7 +3,9 @@ import Organizingcommittee from '../../shared/components/Organizingcommittee/Org
 
 function Organizingpage() {
   return (
-    <div> <Organizingcommittee/> </div>
+    <div>
+      <Organizingcommittee />
+    </div>
   )
 }
 

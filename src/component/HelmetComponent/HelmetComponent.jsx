@@ -4,7 +4,7 @@ const HelmetComponent = ({ title,canonical }) => {
     return (
         <Helmet>
             <title>{title}</title>
-            <meta name="keywords" content="ICASTAI, International Conference on Advanced Smart Technologies and AI Innovations  ,Computing, Data Analytics, Algorithms, Big Data, Artificial Intelligence, Machine Learning, Predictive Analytics, Data Science, Optimization Techniques, Computational Methods, Smart Computing, High-Performance Computing, Algorithm Design, International Conference 2025, Advanced Computing, Data-Driven Technologies, Computer Science Conference, Intelligent Systems, Emerging Technologies, Data Mining" />
+            <meta name="keywords" content="ICASTAI, International Conference on Advanced Smart Technologies and AI Innovations  ,Advanced Smart Technologies, AI Innovations, Artificial Intelligence, Smart Systems, Intelligent Solutions, Emerging Technologies, Machine Learning, Deep Learning, Smart Devices, AI Applications, Cognitive Computing, Internet of Things, AI in Industry, Robotics and Automation, Intelligent Computing, Next-Gen Technologies, International Conference 2025, Smart Innovation, AI Research, Future Technologies" />
             <meta name="description" content="The International Conference on Advanced Smart Technologies and AI Innovations 2025 brings together researchers, professionals, and innovators to explore breakthroughs in artificial intelligence, smart systems, and next-generation technologies." />
             <meta name="author" content="ICASTAI Editorial Team" />
             <meta name="robots" content="index, follow" />

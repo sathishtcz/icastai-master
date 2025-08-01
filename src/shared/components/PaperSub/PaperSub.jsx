@@ -31,8 +31,7 @@ export default function PaperSub() {
     //         setFormData({ ...formData, [e.target.name]: e.target.value });
     //     }
     // };
-
-    const handleFileInputChange = (e) => {
+ const handleFileInputChange = (e) => {
         const { name, type, files, value } = e.target;
 
         // For file preview display
@@ -50,51 +49,100 @@ export default function PaperSub() {
         }
     };
 
-
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus('Sending...');
-
-        try {
-            const formDataToSend = new FormData();
-            formDataToSend.append('Paper_Title', formData.Paper_Title);
-            formDataToSend.append('Author_FUll_Name', formData.Author_FUll_Name);
-            formDataToSend.append('Email_Address', formData.Email_Address);
-            formDataToSend.append('Institution_Name', formData.Institution_Name);
-            formDataToSend.append('Paper_Track', formData.Paper_Track);
-
-            if (formData.Paper_File) {
-                formDataToSend.append('Paper_File', formData.Paper_File);
-            }
-
-            const response = await fetch('https://icastai.com/api/mail.php', {
-                method: 'POST',
-                body: formDataToSend,
-            });
-
-            if (response.ok) {
-                const result = await response.text();
-                setStatus(result);
-                setFormData({
-                    Paper_Title: '',
-                    Author_FUll_Name: '',
-                    Email_Address: '',
-                    Institution_Name: '',
-                    Paper_Track: '',
-                    Paper_File: null,
-                });
-                // document.getElementById('Paper_File').value = '';
-                toast.success("Paper submitted successfully!");
-            } else {
-                setStatus('Failed to send submission. Please try again.');
-                toast.error('Failed to send submission. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            setStatus('An error occurred. Please try again.');
-            toast.error('An error occurred. Please try again.');
+    e.preventDefault();
+    setStatus('Sending...');
+    
+    const journalName = 'icastai';
+    // Generate unique ID: journalName + YYYYMMDD + HHMMSS
+    const now = new Date();
+    const dateStr = now.toISOString().slice(0, 10).replace(/-/g, ''); // YYYYMMDD
+    const timeStr = now.toTimeString().slice(0, 8).replace(/:/g, ''); // HHMMSS
+    const uniqueId = `${journalName}_${dateStr}_${timeStr}`;
+    
+    try {
+        const formDataToSend = new FormData();
+        formDataToSend.append('Submission_ID', uniqueId);
+        formDataToSend.append('Paper_Title', formData.Paper_Title);
+        formDataToSend.append('Author_FUll_Name', formData.Author_FUll_Name);
+        formDataToSend.append('Email_Address', formData.Email_Address);
+        formDataToSend.append('Institution_Name', formData.Institution_Name);
+        formDataToSend.append('Paper_Track', formData.Paper_Track);
+        
+        if (formData.Paper_File) {
+            formDataToSend.append('Paper_File', formData.Paper_File);
         }
-    };
+
+        const googleSheetsParams = new URLSearchParams();
+        googleSheetsParams.append('Submission_ID', uniqueId);
+        googleSheetsParams.append('journal_name', journalName);
+        googleSheetsParams.append('Paper_Title', formData.Paper_Title);
+        googleSheetsParams.append('Author_FUll_Name', formData.Author_FUll_Name);
+        googleSheetsParams.append('Email_Address', formData.Email_Address);
+        googleSheetsParams.append('Institution_Name', formData.Institution_Name);
+        googleSheetsParams.append('Paper_Track', formData.Paper_Track);
+
+        const mailPromise = fetch('https://icastai.com/api/mail.php', {
+            method: 'POST',
+            body: formDataToSend,
+        });
+
+        const sheetsPromise = fetch('https://script.google.com/macros/s/AKfycbwZ_TtKUqAfcue9TNCKy57hTrCKDUP5dTQnWbpSxBDzlRMllEuOoaxzRDl0kQPah5pZ/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: googleSheetsParams.toString(),
+        });
+
+        const [mailResponse, sheetsResponse] = await Promise.allSettled([mailPromise, sheetsPromise]);
+
+        const mailSuccess = mailResponse.status === 'fulfilled' && mailResponse.value.ok;
+        const sheetsSuccess = sheetsResponse.status === 'fulfilled';
+        
+        if (sheetsResponse.status === 'rejected') {
+            console.error('Sheets request failed:', sheetsResponse.reason);
+        }
+
+        if (mailSuccess && sheetsSuccess) {
+            setStatus(`Submission successful! Data sent to both email and Google Sheets.`);
+            
+            setFormData({
+                Paper_Title: '',
+                Author_FUll_Name: '',
+                Email_Address: '',
+                Institution_Name: '',
+                Paper_Track: '',
+                Paper_File: null,
+            });
+            const fileInput = document.getElementById('Paper_File');
+            if (fileInput) {
+                fileInput.value = '';
+            } else {
+                console.error('Element with ID "Paper_File" not found.');
+            }
+            toast.success(`Paper submitted successfully! `);
+            
+        } else if (mailSuccess && !sheetsSuccess) {
+            setStatus('Email sent successfully, but there might be an issue with Google Sheets.');
+            toast.warning('Email sent successfully. Please check if data was saved to Google Sheets.');
+            
+        } else if (!mailSuccess && sheetsSuccess) {
+            setStatus('Data likely saved to Google Sheets, but failed to send email.');
+            toast.warning('Data might be saved to Google Sheets, but failed to send email.');
+            
+        } else {
+            setStatus('There might be issues with the submission. Please check manually.');
+            toast.error('Submission completed, but please verify the results manually.');
+        }
+
+    } catch (error) {
+        console.error('Error:', error);
+        setStatus('An error occurred during submission. Please try again.');
+        toast.error('An error occurred. Please try again.');
+    }
+}
     return (
         <>
             <div className="xl:max-w-[1500px]  md:max-w-[920px] mx-auto mt-20 px-3 mb-10">
@@ -210,7 +258,7 @@ export default function PaperSub() {
                                 placeholder="Enter Your Institution Name"
                                 className="w-full border border-pink-300 focus:outline-none  rounded-xl px-3 py-3"
                             />
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            <div className="flex flex-col xl:flex-row gap-4">
                                 <input
                                     name='Author_FUll_Name'
                                     value={formData.Author_FUll_Name}
@@ -233,9 +281,12 @@ export default function PaperSub() {
                             <select name='Paper_Track' value={formData.Paper_Track} onChange={handleFileInputChange}
                                 required className="w-full border border-pink-300 focus:outline-none  rounded-xl px-3 py-3 text-gray-500">
                                 <option>Select Your Category</option>
-                                <option>AI</option>
-                                <option>Machine Learning</option>
-                                <option>Data Science</option>
+                                <option>Artificial Intelligence</option>
+                                <option>Smart Technologies</option>
+                                <option>IoT</option>
+                                <option>IoT</option>
+                                <option>IoT</option>
+                                <option>IoT</option>
                             </select>
                             <div className="relative w-full border-2 border-dashed border-pink-300 rounded-xl py-10 flex flex-col items-center justify-center text-center text-gray-500 overflow-hidden cursor-pointer">
                                 <input

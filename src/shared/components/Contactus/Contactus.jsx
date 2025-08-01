@@ -8,11 +8,11 @@ import { toast } from "react-toastify";
 export default function Contactus() {
 
     const [formData, setFormData] = useState({
-        Firstname: '',
-        Lastname: '',
-        Mobile_Number: '',
-        Email_Address: '',
-        Message: '',
+        firstname: '',
+        secondname: '',
+        number: '',
+        email: '',
+        message: '',
     });
     const [status, setStatus] = useState('');
 
@@ -30,11 +30,11 @@ export default function Contactus() {
 
         try {
             const formDataToSend = new FormData();
-            formDataToSend.append('Firstname', formData.Firstname);
-            formDataToSend.append('Lastname', formData.Lastname);
-            formDataToSend.append('Mobile_Number', formData.Mobile_Number);
-            formDataToSend.append('Email_Address', formData.Email_Address);
-            formDataToSend.append('Message', formData.Message);
+            formDataToSend.append('firstname', formData.firstname);
+            formDataToSend.append('secondname', formData.secondname);
+            formDataToSend.append('number', formData.number);
+            formDataToSend.append('email', formData.email);
+            formDataToSend.append('message', formData.message);
 
             // if (formData.Paper_File) {
             //     formDataToSend.append('Paper_File', formData.Paper_File);
@@ -49,11 +49,11 @@ export default function Contactus() {
                 const result = await response.text();
                 setStatus(result);
                 setFormData({
-                    Firstname: '',
-                    Lastname: '',
-                    Mobile_Number: '',
-                    Email_Address: '',
-                    Message: '',
+                    firstname: '',
+                    secondname: '',
+                    number: '',
+                    email: '',
+                    message: '',
                 });
                 toast.success("Form submitted successfully!");
             } else {
@@ -102,9 +102,9 @@ export default function Contactus() {
                                     <div>
                                         <input
                                             type="text"
-                                            name="Firstname"
+                                            name="firstname"
                                             onChange={handleChange}
-                                            value={formData.Firstname}
+                                            value={formData.firstname}
                                             placeholder="Enter Your First Name"
                                             className="w-full p-3 rounded-lg  bg-white focus:outline-none"
                                             required
@@ -113,9 +113,9 @@ export default function Contactus() {
                                     <div>
                                         <input
                                             type="text"
-                                            name="Lastname"
+                                            name="secondname"
                                             onChange={handleChange}
-                                            value={formData.Lastname}
+                                            value={formData.secondname}
                                             required
                                             placeholder="Enter Your Last Name "
                                             className="w-full p-3 rounded-lg  bg-white focus:outline-none"
@@ -125,9 +125,9 @@ export default function Contactus() {
                                         <input
                                             type="email"
                                             required
-                                            name="Email_Address"
+                                            name="email"
                                             onChange={handleChange}
-                                            value={formData.Email_Address}
+                                            value={formData.email}
                                             placeholder="Enter Your Email"
                                             className="w-full p-3 rounded-lg  bg-white focus:outline-none"
                                         />
@@ -136,9 +136,9 @@ export default function Contactus() {
                                         <input
                                             type="text"
                                             required
-                                            name="Mobile_Number"
+                                            name="number"
                                             onChange={handleChange}
-                                            value={formData.Mobile_Number}
+                                            value={formData.number}
                                             placeholder="Enter Your Phone Number"
                                             className="w-full p-3 rounded-lg  bg-white focus:outline-none"
                                         />
@@ -147,10 +147,10 @@ export default function Contactus() {
                                         <textarea
                                             type="textarea"
                                             required
-                                            name="Message"
+                                            name="message"
                                             onChange={handleChange}
-                                            value={formData.Message}
-                                            placeholder="Enter Your Message"
+                                            value={formData.message}
+                                            placeholder="Enter Your message"
                                             className="w-full p-3 rounded-lg  bg-white focus:outline-none"
                                             rows="5"
                                         >

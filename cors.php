@@ -10,4 +10,5 @@ if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed
     header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS");
     header("Access-Control-Allow-Headers: Content-Type, Authorization");
 }
+
 ?>

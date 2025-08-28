@@ -22,7 +22,7 @@ function Homepage() {
             <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 '>
               <button className='bg-[#1F1F1F] text-white px-2 py-2 rounded flex items-center justify-center gap-2  sm:gap-2 md:gap-3 '>
                 <PiCalendarCheckFill className='text-lg  sm:text-lg md:text-xl lg:text-2xl xl:text-3xl' />
-                <p className="text-base lg:text-sm xl:text-lg">August 24, 2025 </p>
+                <p className="text-base lg:text-sm xl:text-lg">March 31, 2025 </p>
               </button>
               <button className='bg-[#1F1F1F] text-white px-2 py-2 rounded flex items-center justify-center gap-2 xs:gap-1 sm:gap-2 md:gap-3 '>
                 <IoLocationOutline className='text-lg  sm:text-lg md:text-xl lg:text-2xl xl:text-3xl' />
@@ -61,7 +61,7 @@ function Homepage() {
           <div className='flex flex-row gap-3 sm:gap-4 md:gap-6 '>
             <button className='bg-[#1F1F1F] text-white px-2 py-2 rounded flex items-center justify-center gap-2 xs:gap-1 sm:gap-2 md:gap-3 '>
               <PiCalendarCheckFill className='text-3xl  xl:text-3xl' />
-              <p className="text-sm lg:text-sm xl:text-lg">August 24, 2025 </p>
+              <p className="text-sm lg:text-sm xl:text-lg">March 31, 2025 </p>
             </button>
             <button className='bg-[#1F1F1F] text-white px-2 py-2 rounded flex items-center justify-center gap-2 xs:gap-1 sm:gap-2 md:gap-3 '>
               <IoLocationOutline className='text-3xl  xl:text-3xl' />
@@ -256,7 +256,7 @@ function Homepage() {
               <IoCalendarClearOutline className='text-lg xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#E0048B]' />
               <div className="flex flex-col gap-2">
                 <p className="inter-regular sm:text-base md:text-lg lg:text-[16px] text-gray-700">Date</p>
-                <p className="inter-medium sm:text-base md:text-lg lg:text-[16px] text-gray-700">24th August, 2025</p>
+                <p className="inter-medium sm:text-base md:text-lg lg:text-[16px] text-gray-700">March 31, 2025</p>
               </div>
             </div>
           </div>

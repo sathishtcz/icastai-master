@@ -33,12 +33,12 @@ export default function Keydates() {
 
             <div className="space-y-5 mt-8 max-w-3xl">
               {[
-                ['Abstract Submission Deadline', 'June 10, 2025'],
-                ['Full Paper Submission Deadline', 'June 10, 2025'],
-                ['Notification of Acceptance', 'July 15, 2025'],
-                ['Final Paper Submission', 'July 30, 2025'],
-                ['Registration Deadline', 'August 1, 2025'],
-                ['Conference Dates', 'August 24, 2025'],
+                ['Abstract Submission Deadline', 'March 5, 2025'],
+                ['Full Paper Submission Deadline', 'March 5, 2025'],
+                ['Notification of Acceptance', 'March 12, 2025'],
+                ['Final Paper Submission', 'March 19, 2025'],
+                ['Registration Deadline', 'March 26, 2025'],
+                ['Conference Dates', 'March 31, 2025'],
               ].map(([label, value], index) => (
                 <div key={index} className="flex gap-2 items-start">
                   <GoDotFill className="text-[#ce1687] text-lg mt-[6px] flex-shrink-0" />

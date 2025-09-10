@@ -1,174 +1,349 @@
 import React from 'react'
+import { FaCircleUser } from 'react-icons/fa6';
 import { GoDotFill } from 'react-icons/go'
 import { PiStarFourFill, PiUsersThreeLight } from 'react-icons/pi'
 
 export default function Editorboard() {
 
-    const editors = [
-
+    const organizingCommittee = [
         {
-            name: "Md. Foysal",
-            department: "Department of Electronics and Communication Engineering",
-            university: "Khulna University of Engineering and Technology",
+            name: "Dr. Meenakshi Gupta",
+            department: "Department of Computer Science",
+            university: "National University of Singapore",
+            location: "Singapore"
+        },
+        {
+            name: "Dr. Junaid Ahmed",
+            department: "Department of Information Technology",
+            university: "Zhengzhou University",
+            location: "China"
+        },
+        {
+            name: "Dr. Nguyen Van Thieu",
+            department: "Department of Computer Science",
+            university: "Phenikaa University",
+            location: "Vietnam"
+        },
+        {
+            name: "Dr. Qian Liu",
+            department: "Department of Computer Science and Engineering",
+            university: "Krirk University",
+            location: "Thailand"
+        },
+        {
+            name: "Dr. Ammar Amjad",
+            department: "Department of Information Technology",
+            university: "National Yang Ming Chiao Tung University",
+            location: "Taiwan"
+        },
+    ];
+
+    const TechnicalCommittee = [
+        {
+            name: "Dr. Ernesto Carrillo Arellano",
+            department: "Department of Electronics Engineering",
+            university: "Metropolitan Autonomous University",
+            location: "Mexico"
+        },
+        {
+            name: "Dr. Habchi Yassine",
+            department: "Department of Electrical Engineering",
+            university: "University Center of Naama",
+            location: "Algeria"
+        },
+        {
+            name: "Dr. Shaikh Muhammad Allayear",
+            department: "Department of Multimedia and Creative Technology",
+            university: "Daffodil International University",
             location: "Bangladesh"
-        }, {
-            name: "V. Maheshwari",
-            department: "Department of  Information Technology and Engineering",
-            university: "Vellore Institute of Technology",
+        },
+        {
+            name: "Dr. Leo John Baptist",
+            department: "Department of Information Technology",
+            university: "Botho University",
+            location: "Botswana"
+        },
+        {
+            name: "Dr. Rogerio Espindola",
+            department: "Department of Civil Engineering",
+            university: "Federal University of Rio de Janeiro",
+            location: "Brazil"
+        },
+        {
+            name: "Dr. Hua Qu",
+            department: "Department of Biomedical Engineering and Technology",
+            university: "Tianjin Medical University",
+            location: "China"
+        },
+        {
+            name: "Dr. Aram Sabr Tahr",
+            department: "Department of Computer Science",
+            university: "Cyprus International University",
+            location: "Cyprus"
+        },
+        {
+            name: "Dr. Sowmipriya Rajendiran",
+            department: "Department of Computer Science and Engineering",
+            university: "International School of Information Processing Sciences",
+            location: "France"
+        },
+        {
+            name: "Dr. Thendral Puyalnithi",
+            department: "Department of Computer Science and Engineering",
+            university: "Kalasalingam Academy of Research and Education",
             location: "India"
         },
         {
-            name: "Marwan Ramdhany Edy",
-            department: "Department of Informatics and Computer Engineering",
-            university: "University of Diponegoro",
+            name: "Dr. Johan Hendri Prasetyo",
+            department: "Department of Management Science",
+            university: "Universitas Nusa Mandiri",
             location: "Indonesia"
         },
         {
-            name: "Abderrahim Bouchair",
+            name: "Dr. Zahra Rezaei",
+            department: "Department of Computer Engineering",
+            university: "Judiciary Research Institute",
+            location: "Iran"
+        },
+        {
+            name: "Dr. Ahmed Alkhayyat",
             department: "Department of Computer Science",
-            university: "University of Oran1 Ahmed Ben Bella",
-            location: "Algeria"
+            university: "The Islamic University",
+            location: "Iraq"
         },
         {
-            name: "Deevi Radha Rani",
-            department: "Department of Computer Science and Engineering",
-            university: "Vignan's Foundation for Science, Technology & Research",
-            location: "India "
-        },
-        {
-            name: "Md. Moshiur Rahman",
-            department: "Department of Computer Science and Engineering",
-            university: "Bangladesh Open University",
-            location: "Bangladesh "
-        },
-        {
-            name: "Leandro N. Balico",
+            name: "Dr. Nour Moustafa",
             department: "Department of Computer Science",
-            university: "Federal University of Roraima",
-            location: "Brazil "
+            university: "American University of the Middle East",
+            location: "Kuwait"
         },
         {
-            name: "M. Rajalakshmi",
-            department: "Department of Mechatronics Engineering",
-            university: "Jyothi Engineering College",
-            location: "India "
-        },
-        {
-            name: "A. Rama Prasath",
-            department: "Department of Computing Sciences",
-            university: "Hindustan University",
-            location: "India "
-        },
-        {
-            name: "C. Karthik",
-            department: "Department of Mechatronics Engineering",
-            university: "Jyothi Engineering College",
-            location: "India "
-        },
-        {
-            name: "T. Ananth Kumar",
-            department: "Department of Computer Science and Engineering",
-            university: "IFET College of Engineering ",
-            location: "India "
-        },
-
-
-        {
-            name: "Salah Eddine Benatia",
+            name: "Dr. Zouhour El-Abiad",
             department: "Department of Computer Science",
-            university: "Mascara University",
-            location: "Algeria"
+            university: "ESA Business School",
+            location: "Lebanon"
         },
         {
-            name: "Sajib Kumar Mitra",
+            name: "Dr.B. Mohammed ",
+            department: "Department Of Finance and Admin Science",
+            university: "Al-Madinah International University",
+            location: "Malaysia"
+        },
+        {
+            name: "Dr. Wasan Alamro",
+            department: "Department of Electrical Engineering",
+            university: "Auckland University of Technology",
+            location: "New Zealand"
+        },
+        {
+            name: "Dr. Ashok Kumar",
             department: "Department of Computer Science",
-            university: "University of Dhaka",
-            location: "Bangladesh"
-        },
-
-
-        {
-            name: "Sutikno",
-            department: "Department of Informatics",
-            university: "University of Diponegoro",
-            location: "Indonesia"
-        },
-
-        {
-            name: "Muhammad Ayoub Kamal",
-            department: "Department of Computer Science",
-            university: "DHA Suffa University",
-            location: "Pakistan"
-        },
-        {
-            name: "Ali Rizwan",
-            department: "Department of Industrial Engineering",
-            university: "King Abdulaziz University",
-            location: "Saudi Arabia"
-        },
-
-        {
-            name: "Abdul Rehman Baloch",
-            department: "Department of Computer Science",
-            university: "Iqra University",
-            location: "Pakistan"
-        },
-
-        {
-            name: "Rahman Shafique",
-            department: "Department of Information and Communication Engineering",
-            university: "Yeungnam University",
-            location: "South Korea"
-        },
-        {
-            name: "PPG. Dinesh Asanka",
-            department: "Department of Industrial Management",
-            university: "University of Kelaniya",
-            location: "Sri Lanka"
-        },
-        {
-            name: "Aaron Izang",
-            department: "Department of Information Technology",
-            university: "Babcock University",
+            university: "Skyline university",
             location: "Nigeria"
         },
         {
-            name: "Tejas Dhote",
+            name: "Dr. Puneet Sharma",
+            department: "Department of Automation and Process Engineering",
+            university: "The Arctic University of Norway",
+            location: "Norway"
+        },
+        {
+            name: "Dr. Asma Kashif Shahzad",
+            department: "Department of Information Technology",
+            university: "COMSATS University",
+            location: "Pakistan"
+        },
+        {
+            name: "Dr. Asma Sbeih",
+            department: "Department of Engineering and Information",
+            university: "Palestine Ahliya University",
+            location: "Palestine"
+        },
+
+    ];
+
+    const Advisorycommittee = [
+        {
+            name: "Dr. Alma Bangayan Manera",
+            department: "Department of Electronics and Communication Engineering",
+            university: "Cagayan State University",
+            location: "Philippines"
+        },
+        {
+            name: "Dr.R. Gayathri",
+            department: "Department of Computer Science and Engineering",
+            university: "PSNA College Of Engineering and Technology",
+            location: "India"
+        },
+        {
+            name: "Dr. Muhammad Asif Khan",
+            department: "Department of Information Technology",
+            university: "Qatar University",
+            location: "Qatar"
+        },
+        {
+            name: "Dr. Brahim Issaoui",
+            department: "Department of Industrial Engineering",
+            university: "Qassim University",
+            location: "Saudi Arabia"
+        },
+        {
+            name: "Dr. Stephen Ekwe",
+            department: "Department of Electrical Engineering",
+            university: "University of Cape Town",
+            location: "South Africa"
+        },
+        {
+            name: "Dr. Mujtaba Korai",
+            department: "Department of Computer Engineering",
+            university: "Gachon University",
+            location: "South Korea"
+        },
+        {
+            name: "Dr.S. Prasanth",
+            department: "Department of Physical Sciences and Technology",
+            university: "Sabaragamuwa University of Sri Lanka",
+            location: "Sri Lanka"
+        },
+        {
+            name: "Dr. Karima Benhamza",
+            department: "Department of Computer Science",
+            university: "Guelma University",
+            location: "Algeria"
+        },
+        {
+            name: "Dr.A. Rama Prasath",
+            department: "Department of Computing Sciences",
+            university: "Hindustan University",
+            location: "India"
+        },
+        {
+            name: "Dr. Twana A. Hamad",
+            department: "Department of Computer Engineering",
+            university: "Harran University",
+            location: "Turkiye"
+        },
+        {
+            name: "Dr. Chinwe Peace Igiri",
+            department: "Department of Computer Science",
+            university: "Cavendish University",
+            location: "Uganda"
+        },
+        {
+            name: "Dr. Sharmin Akter",
+            department: "Department of Computer Science and Engineering",
+            university: "Daffodil International University",
+            location: "Bangladesh"
+        },
+        {
+            name: "Dr.R. Arun Kumar",
+            department: "Department of Digital Forensics and Cyber Security",
+            university: "University of South Wales",
+            location: "United Kingdom"
+        },
+        {
+            name: "Dr. Tejas Dhote",
             department: "Department of Mechanical Engineering",
             university: "Michigan Technological University",
             location: "USA"
         },
         {
-            name: "D. Kayathri Devi",
-            department: "Department of Information Technology and Engineering",
-            university: "Amity University",
-            location: "Uzbekistan"
+            name: "Dr.P. Hemalatha",
+            department: "Department of Computer Science",
+            university: "IFET College of Engineering",
+            location: "India"
         },
         {
-            name: "Ijegwa David Acheme",
+            name: "Dr. Sutikno",
+            department: "Department of Informatics",
+            university: "University of Diponegoro",
+            location: "Indonesia"
+        },
+        {
+            name: "Dr. Shakar Ahmed Aziz",
+            department: "Department of Mathematics",
+            university: "Duhok University",
+            location: "Iraq"
+        },
+        {
+            name: "Dr. Gabriel A. Ogunmola",
+            department: "Department of Marketing",
+            university: "Sharda University",
+            location: "Uzbekistan"
+        },
+
+        {
+            name: "Dr. Nguyen Van Thieu",
             department: "Department of Computer Science",
-            university: "Edo State University",
+            university: "Phenikaa University",
+            location: "Vietnam"
+        },
+        {
+            name: "Dr. Badamasi Sani Mohammed",
+            department: "Department of Economics",
+            university: "Al-Qalam University",
             location: "Nigeria"
         },
         {
-            name: "Hansi Gunasinghe",
-            department: "Department of Computing and Information Systems",
-            university: "Sabaragamuwa University of Sri Lanka",
-            location: "Sri Lanka"
-        },
-        {
-            name: "Tehreem Qasim",
-            department: "Department of Robotics and Artificial Intelligence",
-            university: "SZABIST University",
+            name: "Dr. Shahzad Jumani",
+            department: "Department of Mechanical Engineering",
+            university: "Shah Abdul Latif University",
             location: "Pakistan"
         },
-
-
-
-
-
-
-
+        {
+            name: "Dr. Samir Hallaci",
+            department: "Department of Computer Science",
+            university: "Guelma University",
+            location: "Algeria"
+        },
+        {
+            name: "Dr.Md Nahiduzzaman",
+            department: "Department of Electrical and Computer Engineering",
+            university: "Rajshahi University of Engineering and Technology",
+            location: "Bangladesh"
+        },
+        {
+            name: "Dr. Zhihao Li",
+            department: "Department of Economics and Social Sciences",
+            university: "Nanjing Agricultural University",
+            location: "China"
+        },
+        {
+            name: "Dr.M. Anand",
+            department: "Department of Computer Science and Engineering",
+            university: "SRM Institute of Science and Technology",
+            location: "India"
+        },
+        {
+            name: "Dr. Jhanghiz Syahrivar",
+            department: "Department of Computer Science",
+            university: "President University",
+            location: "Indonesia"
+        },
+        {
+            name: "Dr. Ali A.Abdul Saeed",
+            department: "Department of Computer Science and Engineering",
+            university: "Wasit University",
+            location: "Iraq"
+        },
+        {
+            name: "Dr. Ahmed Rimaz Faizabadi",
+            department: "Department of Electrical and Computer Engineering",
+            university: "International Islamic University Malaysia",
+            location: "Malaysia"
+        },
+        {
+            name: "Dr. Alamu Olumide",
+            department: "Department of Electrical and Electronics Engineering",
+            university: "University of Lagos",
+            location: "Nigeria"
+        },
+        {
+            name: "Dr. Asad Aziz",
+            department: "Department of Geography",
+            university: "University of Gujrat",
+            location: "Pakistan"
+        },
     ];
 
 
@@ -215,25 +390,37 @@ export default function Editorboard() {
                 </div>
             </div>
 
-            <h3 className="hanuman-semibold bg-gradient-to-b from-[#E0048B] to-[#83268E] bg-clip-text text-transparent text-2xl sm:text-2xl md:text-3xl lg:text-3xl text-center lg:mt-10 mt-5">Our Distinguished Editorial Board</h3>
-            <div className="grid lg:grid-cols-2 gap-8 xl:max-w-[1250px] md:max-w-[920px] mx-auto p-5 mt-5 ">
-                {editors.map((editor, index) => (
-                    <div key={index} className="flex flex-col gap-2 pb-6 border-b border-gray-200 last:border-b-0">
-                        <div className="flex flex-col items-start">
-                            <p className="font-semibold text-xl text-gray-900">Dr. {editor.name}</p>
+            <h3 id="organizing-committee" className="scroll-mt-24 hanuman-semibold bg-gradient-to-b from-[#E0048B] to-[#83268E] bg-clip-text text-transparent text-2xl sm:text-2xl md:text-3xl lg:text-3xl text-center lg:mt-10 mt-5">Organizing Committee</h3>
+            <div className="max-w-[1300px] mx-auto p-5">
+                {organizingCommittee.map((editor, index) => (
+                    <div key={index}>
+                        <div className='flex gap-2  mb-2 items-center'>
+                            <FaCircleUser className='text-gray-600 flex-shrink-0' />
+                            <p className="text-gray-700 text-[15px]"><span className='font-medium text-[16px] text-black'>{editor.name}</span> - {editor.department}, {editor.university}, {editor.location}.</p>
                         </div>
-                        <div className="flex flex-col gap-2 items-start">
-                            {editor.department && (
-                                <p className="text-gray-600 ">
-                                    {editor.department}
-                                </p>
-                            )}
-                            <p className="text-gray-600 ">
-                                {editor.university}
-                            </p>
-                            <p className="text-gray-600">
-                                {editor.location}
-                            </p>
+                    </div>
+                ))}
+            </div>
+
+            <h3 id="technical-committee" className="scroll-mt-24 hanuman-semibold bg-gradient-to-b from-[#E0048B] to-[#83268E] bg-clip-text text-transparent text-2xl sm:text-2xl md:text-3xl lg:text-3xl text-center lg:mt-10 mt-5">Technical Program Committee</h3>
+            <div className="max-w-[1300px] mx-auto p-5 mt- ">
+                {TechnicalCommittee.map((editor, index) => (
+                    <div key={index}>
+                        <div className='flex gap-2  mb-2 items-center'>
+                            <FaCircleUser className='text-gray-600 flex-shrink-0' />
+                            <p className="text-gray-700 text-[15px]"><span className='font-medium text-[16px] text-black'>{editor.name}</span> - {editor.department}, {editor.university}, {editor.location}.</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <h3 id="advisory-committee" className="scroll-mt-24 hanuman-semibold bg-gradient-to-b from-[#E0048B] to-[#83268E] bg-clip-text text-transparent text-2xl sm:text-2xl md:text-3xl lg:text-3xl text-center lg:mt-10 mt-5">International Advisory Board Committee</h3>
+            <div className="max-w-[1300px] mx-auto p-5 mt- ">
+                {Advisorycommittee.map((editor, index) => (
+                    <div key={index}>
+                        <div className='flex gap-2  mb-2 items-center'>
+                            <FaCircleUser className='text-gray-600 flex-shrink-0' />
+                            <p className="text-gray-700 text-[15px] "><span className='font-medium text-[16px] text-black'>{editor.name}</span> - {editor.department}, {editor.university}, {editor.location}.</p>
                         </div>
                     </div>
                 ))}

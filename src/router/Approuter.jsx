@@ -22,7 +22,7 @@ export default function AppRouter() {
                     <Route path="/scope" element={<Scopepage />} />
                     <Route path="/editorial-board" element={<Editorialpage />} />
                     {/* <Route path="/organizing-committee" element={<Organizingpage />} /> */}
-                    <Route path="/organizing-committee"  element={<Committeepage />} />
+                    {/* <Route path="/organizing-committee"  element={<Committeepage />} /> */}
                     <Route path="/key-dates" element={<Keydatepage />} />
                     <Route path="/conference-tracks" element={<Conferencepage />} />
                     <Route path="/contactus" element={<Contactpage />} />

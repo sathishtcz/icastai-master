@@ -5,7 +5,7 @@ function Register() {
       const navigate = useNavigate();
     return (
         <>
-            <div className="xl:max-w-[1500px]  md:max-w-[920px] mx-auto p-3 mt-4 mb-9">
+            <div  className="xl:max-w-[1500px]  md:max-w-[920px] mx-auto p-3 mt-4 mb-9">
                 <div className="bg-gradient-to-b from-[#E0048B] to-[#83268E] rounded-md p-8">
                     <div className="lg:flex justify-between lg:gap-15 ">
                         <div className="flex flex-col gap-5">

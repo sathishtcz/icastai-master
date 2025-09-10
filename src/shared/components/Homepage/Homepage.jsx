@@ -123,8 +123,8 @@ function Homepage() {
             <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-justify leading-[30px] ">The International Conference on Advanced Smart Technologies and AI Innovations is a premier global forum that brings together researchers, and technology stakeholders to share insights, present cutting-edge innovations, and explore emerging trends in the fields of Artificial Intelligence, Smart Systems, Robotics, Big Data, and Ethical AI. ASTAI serves as a dynamic platform for fostering interdisciplinary collaboration and driving forward the future of intelligent technology.</p>
 
             <div className="lg:hidden block ">
-            <img src="/assets/images/Aboutc.jpg" alt="Aboutimage" className='h-full w-full object-contain ' />
-          </div>
+              <img src="/assets/images/Aboutc.jpg" alt="Aboutimage" className='h-full w-full object-contain ' />
+            </div>
 
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-1">
@@ -236,6 +236,48 @@ function Homepage() {
           </div>
         </div>
       </div> */}
+
+      {/* Our Associates 2025 */}
+      <div className="xl:max-w-[1500px]  md:max-w-[920px] mx-auto p-3 lg:mt-15 mt-5">
+        <p className="hanuman-semibold bg-gradient-to-b from-[#E0048B] to-[#83268E] bg-clip-text text-transparent text-2xl sm:text-2xl md:text-3xl lg:text-3xl text-center">Indexed Journals</p>
+        <div className="w-24 h-1 bg-gradient-to-r from-[#E0048B] to-[#83268E] mx-auto mt-2 rounded-full"></div>
+        <p className="inter-regular sm:text-base md:text-lg lg:text-[16px] text-gray-700  text-center mt-6 max-w-5xl mx-auto">The Selective accepted papers of our International Conference on Advanced Smart Technologies and AI Innovations will be recommended to publish in the following index & publisher Journals.</p>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-10 gap-3 mt-10 max-w-[1200px] mx-auto  w-full">
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/12.jpg" alt="associates" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/2.jpg" alt="associates2" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/3.jpg" alt="associates3" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100 ">
+            <img src="/assets/images/associates/4.jpg" alt="associates4" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/5.jpg" alt="associates5" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/6.jpg" alt="associates6" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/scopus.png" alt="associates7" className="w-48  transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/8.jpg" alt="associates8" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/9.jpg" alt="associates9" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/10.jpg" alt="associates10" className=" transition duration-300"/>
+          </div>
+          <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">
+            <img src="/assets/images/associates/11.jpg" alt="associates11" className=" transition duration-300"/>
+          </div>
+        </div>
+      </div>
 
       {/* Join Us at INCOCSA 2025 */}
       <div className="xl:max-w-[1500px]  md:max-w-[920px] mx-auto p-3 lg:mt-15 mt-5">

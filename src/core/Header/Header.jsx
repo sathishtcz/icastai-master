@@ -6,7 +6,7 @@ import NavItems from "./NavItems";
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
-      const navigate = useNavigate();
+    const navigate = useNavigate();
     const menuRef = useRef(null);
     const [MenuOpen, setMenuOpen] = useState(false);
     const dropdown1Ref = useRef(null);
@@ -15,6 +15,8 @@ const Header = () => {
     const [dropdown1, setDropdown1] = useState(false);
     const [dropdown2, setDropdown2] = useState(false);
     const [dropdown3, setDropdown3] = useState(false);
+    const [subDropdown, setSubDropdown] = useState(false);
+    const subDropdownRef = useRef(null);
     const [scroll, setScroll] = useState(false);
     const location = useLocation();
     const isActive = location.pathname;
@@ -40,6 +42,12 @@ const Header = () => {
         }
     };
 
+
+    const toggleSubDropdown = () => {
+        setSubDropdown(!subDropdown);
+    };
+
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -53,6 +61,9 @@ const Header = () => {
             }
             if (dropdown3Ref.current && !dropdown3Ref.current.contains(event.target)) {
                 setDropdown3(false);
+            }
+            if (subDropdownRef.current && !subDropdownRef.current.contains(event.target)) {
+                setSubDropdown(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -71,12 +82,30 @@ const Header = () => {
         };
     }, []);
 
+    useEffect(() => {
+        if (location.hash) {
+            const sectionId = location.hash.replace("#", "");
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+    }, [location]);
+
 
     const Aboutus = [
         { name: "About the Conference", path: "/about" },
         { name: "Scope of Conference", path: "/scope" },
-        { name: "Organizing Committee", path: "/organizing-committee" },
-        { name: "Editorial Board", path: "/editorial-board" },
+        // { name: "Organizing Committee", path: "/organizing-committee" },
+        {
+            name: "Editorial Board",
+            path: "/editorial-board",
+            subItems: [
+                { name: "Organizing Committee", path: "/editorial-board#organizing-committee" },
+                { name: "Technical Committee", path: "/editorial-board#technical-committee" },
+                { name: "Advisory Committee", path: "/editorial-board#advisory-committee" },
+            ],
+        },
     ];
 
     const AuthorDesk = [
@@ -90,7 +119,7 @@ const Header = () => {
         `${navlocation.pathname === path ? 'bg-gradient-to-b from-[#E0048B] to-[#83268E] bg-clip-text text-transparent' : 'text-black'
         }`;
 
-        
+
     const [scrolled, setScrolled] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
@@ -112,8 +141,8 @@ const Header = () => {
                         ICASTAI
                     </Link> */}
                     <Link to="/">
-                                <img className="w-40 md:mx-0 mx-auto" src="/assets/images/Logo.png" alt="logo" />
-                            </Link>
+                        <img className="w-40 md:mx-0 mx-auto" src="/assets/images/Logo.png" alt="logo" />
+                    </Link>
                 </div>
 
                 <div className="lg:flex hidden items-center">
@@ -129,9 +158,49 @@ const Header = () => {
                                 <div className="absolute bg-white border shadow-lg mt-2 rounded">
                                     <ul className="p-2 text-base max-w-none w-full whitespace-nowrap">
                                         {Aboutus.map((link, index) => (
-                                            <Link key={index} onClick={() => setDropdown1(false)} to={link.path} className="!w-full">
-                                                <li className="px-4 py-2 text-gray-900 inter-medium">{link.name}</li>
-                                            </Link>
+                                            <li key={index} className="relative">
+                                                {link.subItems ? (
+                                                    <div ref={subDropdownRef}>
+                                                        <Link
+                                                            onClick={toggleSubDropdown}
+                                                            className="flex items-center gap-1 px-4 py-2 text-gray-900 inter-medium"
+                                                        >
+                                                            {link.name}
+                                                            <FaChevronDown className={`${subDropdown ? 'rotate-180' : 'rotate-0'} duration-200 text-xs`} />
+                                                        </Link>
+                                                        {subDropdown && (
+                                                            <div className="ml-4 pl-2 bg-white rounded">
+                                                                <ul className=" text-base max-w-none w-full whitespace-nowrap">
+                                                                    {link.subItems.map((subLink, subIndex) => (
+                                                                        <Link
+                                                                            key={subIndex}
+                                                                            onClick={() => {
+                                                                                setDropdown1(false);
+                                                                                setSubDropdown(false);
+                                                                            }}
+                                                                            to={subLink.path}
+                                                                            className="!w-full"
+                                                                        >
+                                                                            <li className="px-4 py-2 text-gray-900 inter-medium">{subLink.name}</li>
+                                                                        </Link>
+                                                                    ))}
+                                                                </ul>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                ) : (
+                                                    <Link
+                                                        onClick={() => {
+                                                            setDropdown1(false);
+                                                            setSubDropdown(false);
+                                                        }}
+                                                        to={link.path}
+                                                        className="!w-full"
+                                                    >
+                                                        <li className="px-4 py-2 text-gray-900 inter-medium">{link.name}</li>
+                                                    </Link>
+                                                )}
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>
@@ -168,7 +237,7 @@ const Header = () => {
                     </div>
                 </div> */}
                 <div className="hidden lg:flex items-center">
-                    <div  onClick={() => navigate('/paper-submission')} className="btn hover-border cursor-pointer">
+                    <div onClick={() => navigate('/paper-submission')} className="btn hover-border cursor-pointer">
                         <button className="bg-[#1F1F1F] inter-medium text-base  lg:text-[17px] text-white transition-all duration-200 py-2 px-2 rounded cursor-pointer">Register Here </button>
                     </div>
                 </div>
@@ -191,6 +260,9 @@ const Header = () => {
                 setDropdown2={setDropdown2}
                 dropdown1={dropdown1}
                 dropdown2={dropdown2}
+                subDropdown={subDropdown}
+                setSubDropdown={setSubDropdown}
+                subDropdownRef={subDropdownRef}
             />
             {MenuOpen && (
                 <div

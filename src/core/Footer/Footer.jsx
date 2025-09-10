@@ -23,7 +23,7 @@ const Footer = () => {
               <li><a href="/" className="hover:underline">Home</a></li>
               <li><a className="hover:underline w-fit"> <Link to='/about'>About the Conference</Link></a></li>
               <li><a className="hover:underline"><Link to='/scope'>Scope</Link> </a></li>
-              <li><a className="hover:underline"><Link to='/organizing-committee'>Organization Committee</Link></a></li>
+              {/* <li><a className="hover:underline"><Link to='/organizing-committee'>Organization Committee</Link></a></li> */}
               <li><a className="hover:underline"><Link to='/editorial-board'>Editorial Board</Link> </a></li>
             </ul>
           </div>

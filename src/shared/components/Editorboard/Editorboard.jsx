@@ -138,7 +138,7 @@ export default function Editorboard() {
         {
             name: "Dr. Ashok Kumar",
             department: "Department of Computer Science",
-            university: "Skyline university",
+            university: "Skyline University",
             location: "Nigeria"
         },
         {
@@ -272,12 +272,12 @@ export default function Editorboard() {
             location: "Uzbekistan"
         },
 
-        {
-            name: "Dr. Nguyen Van Thieu",
-            department: "Department of Computer Science",
-            university: "Phenikaa University",
-            location: "Vietnam"
-        },
+        // {
+        //     name: "Dr. Nguyen Van Thieu",
+        //     department: "Department of Computer Science",
+        //     university: "Phenikaa University",
+        //     location: "Vietnam"
+        // },
         {
             name: "Dr. Badamasi Sani Mohammed",
             department: "Department of Economics",
@@ -302,12 +302,12 @@ export default function Editorboard() {
             university: "Rajshahi University of Engineering and Technology",
             location: "Bangladesh"
         },
-        {
-            name: "Dr. Zhihao Li",
-            department: "Department of Economics and Social Sciences",
-            university: "Nanjing Agricultural University",
-            location: "China"
-        },
+        // {
+        //     name: "Dr. Zhihao Li",
+        //     department: "Department of Economics and Social Sciences",
+        //     university: "Nanjing Agricultural University",
+        //     location: "China"
+        // },
         {
             name: "Dr.M. Anand",
             department: "Department of Computer Science and Engineering",

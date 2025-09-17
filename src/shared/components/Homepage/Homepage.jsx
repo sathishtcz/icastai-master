@@ -240,7 +240,7 @@ function Homepage() {
       {/* Our Associates 2025 */}
       <div className="xl:max-w-[1500px]  md:max-w-[920px] mx-auto p-3 lg:mt-15 mt-5">
         <p className="hanuman-semibold bg-gradient-to-b from-[#E0048B] to-[#83268E] bg-clip-text text-transparent text-2xl sm:text-2xl md:text-3xl lg:text-3xl text-center">Indexed Journals</p>
-        <div className="w-24 h-1 bg-gradient-to-r from-[#E0048B] to-[#83268E] mx-auto mt-2 rounded-full"></div>
+        {/* <div className="w-24 h-1 bg-gradient-to-r from-[#E0048B] to-[#83268E] mx-auto mt-2 rounded-full"></div> */}
         <p className="inter-regular sm:text-base md:text-lg lg:text-[16px] text-gray-700  text-center mt-6 max-w-5xl mx-auto">The Selective accepted papers of our International Conference on Advanced Smart Technologies and AI Innovations will be recommended to publish in the following index & publisher Journals.</p>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-10 gap-3 mt-10 max-w-[1200px] mx-auto  w-full">
           <div className="bg-white shadow-[0_0_10px_rgba(0,0,0,0.06)] rounded-md p-3 hover:-translate-y-2 hover:shadow-xl group flex items-center justify-center hover:scale-110 duration-300 border border-gray-100">

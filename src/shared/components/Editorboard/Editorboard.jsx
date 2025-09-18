@@ -182,9 +182,9 @@ export default function Editorboard() {
             location: "Qatar"
         },
         {
-            name: "Dr. Brahim Issaoui",
+            name: "Dr. Ali Rizwan",
             department: "Department of Industrial Engineering",
-            university: "Qassim University",
+            university: "King Abdulaziz University",
             location: "Saudi Arabia"
         },
         {
